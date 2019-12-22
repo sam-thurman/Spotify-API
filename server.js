@@ -17,6 +17,13 @@ client.on('error', err => {
   console.error(err)
 })
 
+//routes
+app.get('/', getHome);
+
+function getHome(request, response) {
+  response.render('pages/index');
+};
+
 client.connect(() => {
   app.listen(PORT, () => {
     console.log(`listening on ${PORT}`);
