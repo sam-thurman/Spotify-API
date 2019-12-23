@@ -12,7 +12,28 @@
 </head>
 
 <body>
-  <p> HELLO WORLD </p>
+  <main>
+    <p> HELLO WORLD </p>
+    <section id="mediaContainer">
+      <div id='mediaPlayer'></div>
+    </section>
+    <form>
+      artist page: <input>
+    </form>
+  </main>
+  <script src='https://unpkg.com/react-player/dist/ReactPlayer.standalone.js'></script>
+  <!-- soundcloud media player script -->
+  <script>
+    const container = document.getElementById('mediaPlayer')
+    const url = 'https://soundcloud.com/finthemartian'
+
+
+    renderReactPlayer(container, { url, playing: true })
+
+    function pausePlayer() {
+      renderReactPlayer(container, { url, playing: false })
+    }
+  </script>
 </body>
 
 </html>
